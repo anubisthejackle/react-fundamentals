@@ -1,11 +1,12 @@
 <html>
     <body>
-        <div id="root"></div>
         <script type="module">
             const helloWorld = document.createElement('div');
             helloWorld.textContent = 'Hello World';
-            const root = document.getElementById('root');
+            const root = document.createElement('div');
             root.appendChild(helloWorld);
+            const body = document.getElementsByTagName('body')[0];
+            body.appendChild(root);
         </script>
     </body>
 </html>
