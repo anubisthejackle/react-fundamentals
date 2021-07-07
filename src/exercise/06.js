@@ -19,10 +19,13 @@ function UsernameForm({onSubmitUsername}) {
   // 🐨 make sure to associate the label to the input.
   // to do so, set the value of 'htmlFor' prop of the label to the id of input
   return (
-    <form>
+    <form onSubmit={(e) => {
+        e.preventDefault();
+        onSubmitUsername(e.target.elements.username.value);
+        }}>
       <div>
         <label>Username:</label>
-        <input type="text" />
+        <input id="username" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
